@@ -13,3 +13,10 @@
     name: "{{ httpd_package }}"
     state: started
     enabled: true
+- name: enable port 80 for httpd
+  ansible.posix.firewalld:
+    port: 80/tcp
+    state: enabled
+    permanent: true
+    immediate: true
+  when: firewalld_enabled

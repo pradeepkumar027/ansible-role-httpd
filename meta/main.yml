@@ -1,4 +1,5 @@
 galaxy_info:
+  role_name: httpd
   author: Pradeep Kumar
   description: httpd role for linux
   company: your company (optional)

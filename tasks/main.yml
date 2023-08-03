@@ -1,0 +1,15 @@
+---
+# tasks file for httpd
+- name: update yum
+  yum:
+    name: "*"
+    state: latest
+- name: install httpd package
+  yum:
+    name: "{{ httpd_package }}"
+    state: present
+- name: start and enable httpd
+  service:
+    name: "{{ httpd_package }}"
+    state: started
+    enabled: true
